@@ -11,6 +11,8 @@
 #ifndef STRUCT_H
 #define STRUCT_H
 
+#include <sys/types.h>
+#include <sys/stat.h>
 #include <dirent.h>
 
 DIR* rep;
@@ -18,6 +20,7 @@ struct dirent* fichier;
 int	e;
 int	n;
 char	*str1;
+struct stat	mystat;
 char	*tab[100];
 
 #endif

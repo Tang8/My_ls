@@ -1,5 +1,5 @@
 /*
-** my_ls_a.c for my_ls_a.c in /home/tang/my_ls
+** my_ls_l.c for my_ls_l.c in /home/tang/my_ls
 ** 
 ** Made by Tang Gustin
 ** Login   <Tang_g@etna-alternance.net>
@@ -11,31 +11,21 @@
 #include "../Hfile/my.h"
 #include "../Hfile/Struct.h"
 
-int	condition(char **argv, int e)
+void    my_ls_l2()
 {
-  while (argv[e][0] == '-')
-    {
-      e = e + 1;
-    }
-  return e;
-}
-
-void    my_ls_a2()
-{
-  n = 0;
-  
   rep = opendir(".");
   verif_open(rep);
   while ((fichier = readdir(rep)))
     {
-      tab[n] = my_putstr(fichier->d_name);
+      my_putstr(fichier->d_name);
       my_putstr(" ");
+      my_putchar('\n');
     }
   my_putchar('\n');
   verif_close(rep);
 }
 
-int    my_ls_a(int argc, char **argv, int e, int n)
+int    my_ls_l(int argc, char **argv, int e, int n)
 {
   e = condition(argv, e);
   my_putstr(argv[e]);
